@@ -1,0 +1,158 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    background-color: #1a1924;
+    font-size: 1.6rem; /* voltando o font-size para 16px (padrão do navegador) */
+    font-family: 'Roboto', sans-serif;
+    color: #E1E1E6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+#app{
+    padding: 2.4rem 3.2rem;
+    height: 100vh;
+    width: 100vw;
+    max-height: 100rem;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    margin: auto;
+}
+
+#top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#user-info{
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+#user-info img {
+    width: 4.8rem;
+    height: 4.8rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#user-status .status{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+#user-status .status::before{
+    content:"";
+    width: 0.8rem;
+    height: 0.8rem;
+    display: block;
+    background-color: #00B37E;
+    border-radius: 50%;
+}
+
+#user-status .status {
+    color: #00B37E;
+    font-size: 1.2rem;
+}
+
+#last-seen {
+    margin-top:  2.6rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+}
+
+#messages{
+    overflow-y: scroll;
+    padding-bottom: 2.4rem;
+
+}
+
+#messages::-webkit-scrollbar{
+    display: none;
+}
+
+.messages{
+    margin-top: 3rem;
+    display: grid;
+    gap: 3rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+.message .body{
+    margin-top: 1rem;
+    background-color: #633BBC;
+    padding: 1.4rem;
+    width: fit-content;
+    max-width: 35vw;
+    border-radius: 0 .8rem .8rem .8rem;
+}
+
+.message::not(.your){
+    width: 60vw;
+}
+
+.your.message{
+    margin-left: auto; 
+}
+
+.your.message .top{
+    text-align: right;
+}
+
+.your.message .body{
+    background-color: #07B47e;
+    border-radius:  .8rem .8rem 0 .8rem;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #2B2B43;
+    border-radius: 999rem;
+    padding: 1.4rem 2.4rem;
+}
+
+input{
+    flex: 1;
+    outline: none;
+    color: #E1E1E6;
+}
+
+form:focus-within{
+    outline: .2rem solid white;
+}
+
+ input::placeholder{
+    color: #E1E1E6;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+ button{
+    color: #E1E1E6;
+    font-size: 2.4rem;
+}
+
+input, button{
+    background: transparent;
+    border: 0;
+}
